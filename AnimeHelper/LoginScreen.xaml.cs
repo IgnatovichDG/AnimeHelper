@@ -23,5 +23,6 @@ namespace AnimeHelper
         {
             InitializeComponent();
         }
+        //TODO: Написать метод для отправки логина и пароля в модель.
     }
 }
