@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,9 +21,12 @@ namespace AnimeHelper
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        
+        public MainWindow(Model model)
         {
-            InitializeComponent();           
+            //TODO: GUI+Logic
+            InitializeComponent();
+            DataContext = new MainViewModel(model);           
         }
     }
 }
