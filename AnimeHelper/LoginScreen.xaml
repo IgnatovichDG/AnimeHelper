@@ -16,11 +16,11 @@
         <Label Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="21.333" FontStyle="Italic" FontWeight="Bold"> Welcome to Anime Helper!</Label>
         <StackPanel Grid.Row="1">
             <Label Margin="2">Login:</Label>
-            <TextBox Name="LoginTextBox" Margin="5"></TextBox>
+            <TextBox Name="LoginTextBox" Margin="5" Text="FollowFable"></TextBox>
         </StackPanel >
         <StackPanel Grid.Row="2">
             <Label Margin="2">Password:</Label>
-            <PasswordBox Name="PasswordBox" Margin="5"></PasswordBox>
+            <PasswordBox Name="PasswordBox" Margin="5" Password="SonicDan1996"></PasswordBox>
         </StackPanel>
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>

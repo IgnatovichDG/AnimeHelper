@@ -21,12 +21,19 @@ namespace AnimeHelper
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel mv;
         
-        public MainWindow(Model model)
+        public MainWindow()
         {
-            //TODO: GUI+Logic
+            mv = new MainViewModel();
             InitializeComponent();
-            DataContext = new MainViewModel(model);           
+            DataContext = mv;           
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var str = TextBox.Text.Replace(" ", "+");
+             mv.RefreshList(str);
         }
     }
 }

@@ -29,15 +29,16 @@ namespace AnimeHelper
 
         private async void SignInButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Model model = new Model();
+            WebWorking webWorking = Factory.GetWebWorking();
+            
             try
             {
-                var check = await model.UserVerify(LoginTextBox.Text, PasswordBox.Password);
+                var check = await webWorking.UserVerify(LoginTextBox.Text, PasswordBox.Password);
             
             if (check == HttpStatusCode.OK)
             {
-                MessageBox.Show("Добро пожаловать!", "Welcome");
-                MainWindow mw = new MainWindow(model);
+                //MessageBox.Show("Добро пожаловать!", "Welcome");
+                MainWindow mw = new MainWindow();
                 mw.Show();
                 this.Close();
             }

@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimeHelper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" ResizeMode="CanMinimize">
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBox  Name="TextBox" Width="425" ></TextBox>
+            <Button  Name="Search" HorizontalAlignment="Right" Width="85" Height="20" VerticalAlignment="Top" Click="ButtonBase_OnClick">Search</Button>
+        </StackPanel>
+        <ListBox Name="AnimeBox"  Grid.Row="1" ItemsSource="{Binding ListAnimes}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5" Orientation="Vertical">
+                        <TextBlock Text="{Binding Path=ID, StringFormat='ID: {0}'}"></TextBlock>
+                        <TextBlock Text="{Binding Tittle, StringFormat='Tittle: {0}'}"></TextBlock>
+                        <TextBlock Text="{Binding EngTittle, StringFormat='English Tittle: {0}'}"></TextBlock>
+                        <TextBlock Text="{Binding Episodes, StringFormat='Episodes: {0}'}"></TextBlock>
+                        <TextBlock Text="{Binding Score, StringFormat='Score: {0}'}"></TextBlock>
+                        <TextBlock Text="{Binding Type, StringFormat='Type: {0}'}"></TextBlock>
+                        <TextBlock Text="{Binding Status, StringFormat='Status: {0}'}"></TextBlock>
+                   
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
